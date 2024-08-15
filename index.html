@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            #body{
+                background-image: url('https://github.com/11pro11/namepicker/blob/main/background.jpg?raw=true');
+                background-size: cover;
+            }
+            #banner{
+                display: flex;
+                justify-content: center;
+                margin-top: 5%;
+            }
+            .wish{
+                position: fixed;
+                bottom: 1rem;
+                right: 1rem;
+            }
+            #名1{
+                position: absolute;
+                font-size: 10rem;
+                font-family: "Ma Shan Zheng", cursive;
+                font-weight: 400;
+                color: goldenrod;
+                left: 25%;
+                top: 15%;
+                display: none;
+            }
+            #名2{
+                position: absolute;
+                font-size: 10rem;
+                font-family: "Ma Shan Zheng", cursive;
+                font-weight: 400;
+                color: goldenrod;
+                left: 25%;
+                top: 37%;
+                display: none;
+            }
+            #名3{
+                position: absolute;
+                font-size: 10rem;
+                font-family: "Ma Shan Zheng", cursive;
+                font-weight: 400;
+                color: goldenrod;
+                left: 25%;
+                top: 60%;
+                display: none;
+            }
+            #name1{
+                position: absolute;
+                font-size: 5rem;
+                font-family: "Ma Shan Zheng", cursive;
+                font-weight: 400;
+                color: goldenrod;
+                left: 50%;
+                top: 30%;
+                display: none;
+            }
+            #name2{
+                position: absolute;
+                font-size: 5rem;
+                font-family: "Ma Shan Zheng", cursive;
+                font-weight: 400;
+                color: goldenrod;
+                left: 50%;
+                top: 50%;
+                display: none;
+            }
+        </style>
+    </head>
+    <body id="body">
+
+        <div onclick="wish(); setTimeout(wishend, 6500)" class="wish">
+            <img id="wish1" style="display: inline;" src="https://github.com/11pro11/namepicker/blob/main/wish1.png?raw=true" width="300rem">
+            <img id="wish10" style="display: inline;" src="https://github.com/11pro11/namepicker/blob/main/wish10.png?raw=true" width="300rem">
+        </div>
+
+        <div onclick="revert()" style="display:none" id="名1"></div>
+        <div onclick="revert()" style="display:none" id="名2"></div>
+        <div onclick="revert()" style="display:none" id="名3"></div>
+        <div onclick="revert()" style="display:none" id="name1"></div>
+        <div onclick="revert()" style="display:none" id="name2"></div>
+
+        <div id="banner"><img src="https://github.com/11pro11/namepicker/blob/main/bannerfinal.png?raw=true" width="80%"></div>
+
+        <script>
+            function wish() {
+                document.getElementById('wish1').style.display = 'none'
+                document.getElementById('wish10').style.display = 'none'
+                document.getElementById('banner').style.display = 'none'
+                document.getElementById('body').style.backgroundImage = "url('https://github.com/11pro11/namepicker/blob/main/wishanimation.gif?raw=true')"
+            }
+            function wishend() {
+                document.getElementById('body').style.backgroundImage = "url('https://github.com/11pro11/namepicker/blob/main/good.jpg?raw=true')"
+                namepicker()
+                document.getElementById('名1').style.display = 'flex'
+                document.getElementById('名2').style.display = 'flex'
+                document.getElementById('名3').style.display = 'flex'
+                document.getElementById('name1').style.display = 'flex'
+                document.getElementById('name2').style.display = 'flex'
+            }
+            function revert() {
+                document.getElementById('wish1').style.display = 'inline'
+                document.getElementById('wish10').style.display = 'inline'
+                document.getElementById('banner').style.display = 'flex'
+                document.getElementById('body').style.backgroundImage = "url('https://github.com/11pro11/namepicker/blob/main/background.jpg?raw=true')"
+                document.getElementById('名1').style.display = 'none'
+                document.getElementById('名2').style.display = 'none'
+                document.getElementById('名3').style.display = 'none'
+                document.getElementById('name1').style.display = 'none'
+                document.getElementById('name2').style.display = 'none'
+            }
+            function namepicker() {
+                var generated = Math.floor(Math.random() * 32)+1;
+                if (generated === 1) {
+                    document.getElementById('名1').innerHTML = '洪'
+                    document.getElementById('名2').innerHTML = '关'
+                    document.getElementById('名3').innerHTML = '海'
+                    document.getElementById('name1').innerHTML = 'Keane'
+                    document.getElementById('name2').innerHTML = 'Ang'
+                } else if (generated === 2) {
+                    document.getElementById('名1').innerHTML = '陈'
+                    document.getElementById('名2').innerHTML = '培'
+                    document.getElementById('名3').innerHTML = '霖'
+                    document.getElementById('name1').innerHTML = 'Chen'
+                    document.getElementById('name2').innerHTML = 'Peilin'
+                } else if (generated === 3) {
+                    document.getElementById('名1').innerHTML = '董'
+                    document.getElementById('名2').innerHTML = '林'
+                    document.getElementById('名3').innerHTML = '泽'
+                    document.getElementById('name1').innerHTML = 'Dong'
+                    document.getElementById('name2').innerHTML = 'Linze'
+                } else if (generated === 4) {
+                    document.getElementById('名1').innerHTML = '段'
+                    document.getElementById('名2').innerHTML = '允'
+                    document.getElementById('名3').innerHTML = '知'
+                    document.getElementById('name1').innerHTML = 'Duan'
+                    document.getElementById('name2').innerHTML = 'Yunzhi'
+                } else if (generated === 5) {
+                    document.getElementById('名1').innerHTML = '沈'
+                    document.getElementById('名2').innerHTML = '颂'
+                    document.getElementById('名3').innerHTML = '义'
+                    document.getElementById('name1').innerHTML = 'Elijah'
+                    document.getElementById('name2').innerHTML = 'Sing'
+                } else if (generated === 6) {
+                    document.getElementById('名1').innerHTML = '符'
+                    document.getElementById('名2').innerHTML = '方'
+                    document.getElementById('名3').innerHTML = '腾'
+                    document.getElementById('name1').innerHTML = 'Ethan'
+                    document.getElementById('name2').innerHTML = 'Foo'
+                } else if (generated === 7) {
+                    document.getElementById('名1').innerHTML = '符'
+                    document.getElementById('名2').innerHTML = '永'
+                    document.getElementById('名3').innerHTML = '霖'
+                    document.getElementById('name1').innerHTML = 'Jong'
+                    document.getElementById('name2').innerHTML = 'Lim'
+                } else if (generated === 8) {
+                    document.getElementById('名1').innerHTML = '牛'
+                    document.getElementById('名2').innerHTML = '梓'
+                    document.getElementById('名3').innerHTML = '原'
+                    document.getElementById('name1').innerHTML = 'Grayson'
+                    document.getElementById('name2').innerHTML = 'Niu'
+                } else if (generated === 9) {
+                    document.getElementById('名1').innerHTML = '许'
+                    document.getElementById('名2').innerHTML = '晋'
+                    document.getElementById('名3').innerHTML = '伟'
+                    document.getElementById('name1').innerHTML = 'Jin'
+                    document.getElementById('name2').innerHTML = 'Wei'
+                } else if (generated === 10) {
+                    document.getElementById('名1').innerHTML = '许'
+                    document.getElementById('名2').innerHTML = '炎'
+                    document.getElementById('名3').innerHTML = '鈬'
+                    document.getElementById('name1').innerHTML = 'Yan'
+                    document.getElementById('name2').innerHTML = 'Duo'
+                } else if (generated === 11) {
+                    document.getElementById('名1').innerHTML = '黄'
+                    document.getElementById('名2').innerHTML = '奕'
+                    document.getElementById('名3').innerHTML = '扬'
+                    document.getElementById('name1').innerHTML = 'Huang'
+                    document.getElementById('name2').innerHTML = 'Yiyang'
+                } else if (generated === 12) {
+                    document.getElementById('名1').innerHTML = '杨'
+                    document.getElementById('名2').innerHTML = '智'
+                    document.getElementById('名3').innerHTML = '森'
+                    document.getElementById('name1').innerHTML = 'Klaus'
+                    document.getElementById('name2').innerHTML = 'Yeo'
+                } else if (generated === 13) {
+                    document.getElementById('名1').innerHTML = '刘'
+                    document.getElementById('名2').innerHTML = '玄'
+                    document.getElementById('名3').innerHTML = '德'
+                    document.getElementById('name1').innerHTML = 'Jotham'
+                    document.getElementById('name2').innerHTML = 'Law'
+                } else if (generated === 14) {
+                    document.getElementById('名1').innerHTML = '李'
+                    document.getElementById('名2').innerHTML = '冠'
+                    document.getElementById('名3').innerHTML = '秀'
+                    document.getElementById('name1').innerHTML = 'Li'
+                    document.getElementById('name2').innerHTML = 'Guanxiu'
+                } else if (generated === 15) {
+                    document.getElementById('名1').innerHTML = '李'
+                    document.getElementById('名2').innerHTML = '诗'
+                    document.getElementById('名3').innerHTML = '远'
+                    document.getElementById('name1').innerHTML = 'Li'
+                    document.getElementById('name2').innerHTML = 'Shiyuan'
+                } else if (generated === 16) {
+                    document.getElementById('名1').innerHTML = '李'
+                    document.getElementById('名2').innerHTML = '腾'
+                    document.getElementById('名3').innerHTML = '龙'
+                    document.getElementById('name1').innerHTML = 'Li'
+                    document.getElementById('name2').innerHTML = 'Tenglong'
+                } else if (generated === 17) {
+                    document.getElementById('名1').innerHTML = '李'
+                    document.getElementById('名2').innerHTML = '昕'
+                    document.getElementById('名3').innerHTML = '烨'
+                    document.getElementById('name1').innerHTML = ''
+                    document.getElementById('name2').innerHTML = 'Nolan'
+                } else if (generated === 18) {
+                    document.getElementById('名1').innerHTML = '李'
+                    document.getElementById('名2').innerHTML = '展'
+                    document.getElementById('名3').innerHTML = '源'
+                    document.getElementById('name1').innerHTML = 'Li'
+                    document.getElementById('name2').innerHTML = 'Zhanyuan'
+                } else if (generated === 19) {
+                    document.getElementById('名1').innerHTML = '林'
+                    document.getElementById('名2').innerHTML = '志'
+                    document.getElementById('名3').innerHTML = '鸿'
+                    document.getElementById('name1').innerHTML = 'Chee'
+                    document.getElementById('name2').innerHTML = 'Hong'
+                } else if (generated === 20) {
+                    document.getElementById('名1').innerHTML = '林'
+                    document.getElementById('名2').innerHTML = '靖'
+                    document.getElementById('名3').innerHTML = '恒'
+                    document.getElementById('name1').innerHTML = 'Ethan'
+                    document.getElementById('name2').innerHTML = 'Lim'
+                } else if (generated === 21) {
+                    document.getElementById('名1').innerHTML = '林'
+                    document.getElementById('名2').innerHTML = '意'
+                    document.getElementById('名3').innerHTML = '达'
+                    document.getElementById('name1').innerHTML = 'Lucas'
+                    document.getElementById('name2').innerHTML = 'Lim'
+                } else if (generated === 22) {
+                    document.getElementById('名1').innerHTML = '林'
+                    document.getElementById('名2').innerHTML = '智'
+                    document.getElementById('名3').innerHTML = '豪'
+                    document.getElementById('name1').innerHTML = 'Christopher'
+                    document.getElementById('name2').innerHTML = 'Ray'
+                } else if (generated === 23) {
+                    document.getElementById('名1').innerHTML = '刘'
+                    document.getElementById('名2').innerHTML = '泰'
+                    document.getElementById('名3').innerHTML = '鑫'
+                    document.getElementById('name1').innerHTML = 'Liu'
+                    document.getElementById('name2').innerHTML = 'Taixin'
+                } else if (generated === 24) {
+                    document.getElementById('名1').innerHTML = '刘'
+                    document.getElementById('名2').innerHTML = '宇'
+                    document.getElementById('名3').innerHTML = '哲'
+                    document.getElementById('name1').innerHTML = 'Liu'
+                    document.getElementById('name2').innerHTML = 'Yuzhe'
+                } else if (generated === 25) {
+                    document.getElementById('名1').innerHTML = '罗'
+                    document.getElementById('名2').innerHTML = '炜'
+                    document.getElementById('名3').innerHTML = '竣'
+                    document.getElementById('name1').innerHTML = 'Wai'
+                    document.getElementById('name2').innerHTML = 'Zeon'
+                } else if (generated === 26) {
+                    document.getElementById('名1').innerHTML = '陈'
+                    document.getElementById('名2').innerHTML = '理'
+                    document.getElementById('名3').innerHTML = '浩'
+                    document.getElementById('name1').innerHTML = 'Mitchell'
+                    document.getElementById('name2').innerHTML = 'Tan'
+                } else if (generated === 27) {
+                    document.getElementById('名1').innerHTML = '王'
+                    document.getElementById('名2').innerHTML = '德'
+                    document.getElementById('名3').innerHTML = '利'
+                    document.getElementById('name1').innerHTML = 'Caden'
+                    document.getElementById('name2').innerHTML = 'Ong'
+                } else if (generated === 28) {
+                    document.getElementById('名1').innerHTML = '张'
+                    document.getElementById('名2').innerHTML = '展'
+                    document.getElementById('名3').innerHTML = '睿'
+                    document.getElementById('name1').innerHTML = 'Scott'
+                    document.getElementById('name2').innerHTML = 'Teo'
+                } else if (generated === 29) {
+                    document.getElementById('名1').innerHTML = '谭'
+                    document.getElementById('名2').innerHTML = '正'
+                    document.getElementById('名3').innerHTML = '岳'
+                    document.getElementById('name1').innerHTML = 'Tan'
+                    document.getElementById('name2').innerHTML = 'Zhengyue'
+                } else if (generated === 30) {
+                    document.getElementById('名1').innerHTML = '黄'
+                    document.getElementById('名2').innerHTML = '敬'
+                    document.getElementById('名3').innerHTML = '皓'
+                    document.getElementById('name1').innerHTML = 'Jing'
+                    document.getElementById('name2').innerHTML = 'Hao'
+                } else if (generated === 31) {
+                    document.getElementById('名1').innerHTML = '俞'
+                    document.getElementById('名2').innerHTML = '治'
+                    document.getElementById('名3').innerHTML = '元'
+                    document.getElementById('name1').innerHTML = 'Yu'
+                    document.getElementById('name2').innerHTML = 'Zhiyuan'
+                } else{
+                    document.getElementById('名1').innerHTML = '李'
+                    document.getElementById('名2').innerHTML = '宇'
+                    document.getElementById('名3').innerHTML = '泽'
+                    document.getElementById('name1').innerHTML = 'Zachary'
+                    document.getElementById('name2').innerHTML = 'Lee'
+                } 
+            }
+        </script>
+    </body>
+</html>
