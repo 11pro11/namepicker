@@ -25,47 +25,70 @@
                 right: 1rem;
             }
             #name1{
-                position: relative;
+                position: fixed;
                 font-size: 15rem;
                 font-family: "Times New Roman", Times, serif;
                 font-weight: 400;
                 color: goldenrod;
-                top: 12rem;
-                left: 13rem;
-                right: 13rem;
+                top: 50%;
+                left: 50%;
+                display: none;
+                transform: translate(-50%, -50%);
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+            }
+            #skip{
+                position: fixed;
+                top: 1rem;
+                right: 2rem;
+                color: white;
+                font-size: 2rem;
                 display: none;
             }
         </style>
     </head>
     <body id="body">
 
-        <div onclick="wish(); setTimeout(wishend, 6500)" class="wish">
+        <div onclick="wish();" class="wish">
             <img id="wish1" style="display: inline;" src="https://github.com/11pro11/namepicker/blob/main/wish1.png?raw=true" width="300rem">
-            <img id="wish10" style="display: inline;" src="https://github.com/11pro11/namepicker/blob/main/wish10.png?raw=true" width="300rem">
         </div>
 
         <div onclick="revert()" style="display:none" id="name1"></div>
 
         <div id="banner"><img src="https://github.com/11pro11/namepicker/blob/main/bannerfinal.png?raw=true" width="80%"></div>
 
+        <div id="skip" onclick="skipAnimation()">SKIP</div>
+
         <script>
+            let wishTimeout;
+
             function wish() {
-                document.getElementById('wish1').style.display = 'none'
-                document.getElementById('wish10').style.display = 'none'
-                document.getElementById('banner').style.display = 'none'
-                document.getElementById('body').style.backgroundImage = "url('https://github.com/11pro11/namepicker/blob/main/wishanimation.gif?raw=true')"
+                if (wishTimeout) {
+                    clearTimeout(wishTimeout);
+                    wishTimeout = null;
+                }
+                document.getElementById('wish1').style.display = 'none';
+                document.getElementById('banner').style.display = 'none';
+                const gifUrl = 'https://github.com/11pro11/namepicker/blob/main/wishanimation.gif?raw=true&t=' + new Date().getTime();
+                document.getElementById('body').style.backgroundImage = "url('" + gifUrl + "')";
+                document.getElementById('skip').style.display = 'flex';
+                wishTimeout = setTimeout(wishend, 6500);
             }
             function wishend() {
                 document.getElementById('body').style.backgroundImage = "url('https://github.com/11pro11/namepicker/blob/main/good.jpg?raw=true')"
                 namepicker()
                 document.getElementById('name1').style.display = 'flex'
+                document.getElementById('skip').style.display = 'none';
             }
             function revert() {
                 document.getElementById('wish1').style.display = 'inline'
-                document.getElementById('wish10').style.display = 'inline'
                 document.getElementById('banner').style.display = 'flex'
                 document.getElementById('body').style.backgroundImage = "url('https://github.com/11pro11/namepicker/blob/main/background.jpg?raw=true')"
                 document.getElementById('name1').style.display = 'none'
+            }
+            function skipAnimation() {
+                wishend();
             }
             function namepicker() {
                 var generated = Math.floor(Math.random() * 24)+1;
