@@ -100,6 +100,10 @@
                 wishTimeout = setTimeout(wishend, 6500);
             }
             function wishend() {
+                if (wishTimeout) {
+                    clearTimeout(wishTimeout);
+                    wishTimeout = null;
+                }
                 document.getElementById('body').style.backgroundImage = "url('https://github.com/11pro11/namepicker/blob/main/good.jpg?raw=true')"
                 namepicker()
                 document.getElementById('name1').style.display = 'flex'
@@ -107,6 +111,10 @@
                 document.getElementById('overlay').style.display = 'block';
             }
             function revert() {
+                if (wishTimeout) {
+                    clearTimeout(wishTimeout);
+                    wishTimeout = null;
+                }
                 document.getElementById('wish1').style.display = 'inline'
                 document.getElementById('banner').style.display = 'flex'
                 document.getElementById('body').style.backgroundImage = "url('https://github.com/11pro11/namepicker/blob/main/background.jpg?raw=true')"
